@@ -38,7 +38,6 @@ class VasyaClerkTest {
       bill25++;
     } else {
       changeBills(payment);
-
     }
   }
 
