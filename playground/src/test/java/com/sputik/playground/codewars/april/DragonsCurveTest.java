@@ -2,11 +2,9 @@ package com.sputik.playground.codewars.april;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntFunction;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import org.junit.jupiter.api.Test;
 
 class DragonsCurveTest {
@@ -33,28 +31,35 @@ class DragonsCurveTest {
 
   //Make the function; map the chars to Strings
   //a -> aRbFR, b -> LFaLb, otherwise -> itself
-  public IntFunction<String> mapFunction = (it) -> it == 'b' ? "aRbFR" :
-      it == 'a' ? "LFaLB" : Character.toString(it);
-
+  private final IntFunction<String> mapFunction = (it) -> it == 'a' ? "aRbFR" :
+      it == 'b' ? "LFaLB" : Character.toString(it);
 
   /**
    * Make the curve; stream the chars repeatedly (starting with Fa) through the mapFunction n times
    * Then remove the a and b (createFilter function is useful for that)
    */
   public String createCurve(int n) {
-    StringBuilder collect = new StringBuilder("F");
+    if (n == 0) {
+      return "F";
+    }
+    StringBuilder collect = new StringBuilder(
+        "Fa".chars()
+            .mapToObj(mapFunction)
+            .collect(Collectors.joining()));
 
-    for (int i = 0; i < n; i++) {
-      collect.append("a".chars()
-          .peek(System.out::println)
-          .mapToObj(mapFunction)
-          .peek(System.out::println)
-          .collect(Collectors.joining()));
+    for (int i = 1; i < n; i++) {
+      collect.append(
+          collect.chars()
+              .peek(it -> System.err.println("" + it + " -< " + Character.toString(it)))
+              .mapToObj(mapFunction)
+              .collect(Collectors.joining())
+      );
+      System.out.println("Times: " + i + "/" + n + " -> collect: " + collect);
     }
 
-    return collect.toString().replaceAll("(?i)([a,b])", "");
+    return collect.toString()
+        .replaceAll("(?i)([a,b])", "");
   }
-
 
   /**
    * How many of the specified char are in the given curve? Hint: createFilter could be useful for
@@ -70,5 +75,4 @@ class DragonsCurveTest {
   public IntPredicate createFilter(char filterWhat, boolean keep) {
     return value -> keep == (value == filterWhat);
   }
-
 }
