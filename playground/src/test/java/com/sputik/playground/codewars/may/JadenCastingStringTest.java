@@ -20,8 +20,8 @@ class JadenCastingStringTest {
 
   @Test
   void shouldReturnJadenString() {
-    assertThat(toJadenCase("How can mirrors be real if our eyes aren't real")).isEqualTo(
-        "How Can Mirrors Be Real If Our Eyes Aren't Real");
+    assertThat(toJadenCase("How can mirrors be real if our eyes aren't real"))
+        .isEqualTo("How Can Mirrors Be Real If Our Eyes Aren't Real");
   }
 
   String toJadenCase(String s) {
