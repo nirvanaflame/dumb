@@ -1,10 +1,12 @@
 package com.sputik.jbehave.steps;
 
+import static com.sputik.jbehave.api.model.SharedContext.getSharedContext;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.sputik.jbehave.api.model.Person;
 import com.sputik.jbehave.api.model.SharedContext;
 import com.sputik.jbehave.client.PersonWebClient;
 import lombok.SneakyThrows;
-import lombok.extern.slf4j.Slf4j;
 import org.jbehave.core.annotations.AfterStory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
@@ -13,10 +15,6 @@ import org.jbehave.core.annotations.When;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import static com.sputik.jbehave.api.model.SharedContext.getSharedContext;
-import static org.assertj.core.api.Assertions.assertThat;
-
-@Slf4j
 @Component
 public class PersonSteps {
 

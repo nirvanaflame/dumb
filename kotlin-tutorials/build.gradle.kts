@@ -1,6 +1,6 @@
 plugins {
     kotlin("jvm") version "1.5.20-M1"
-    `java-library`
+//    `java-library`
 }
 
 group = "org.sputik"

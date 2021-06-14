@@ -1,5 +1,7 @@
 package com.sputik.jbehave;
 
+import java.text.SimpleDateFormat;
+import java.util.List;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.failures.FailingUponPendingStep;
 import org.jbehave.core.io.CodeLocations;
@@ -17,13 +19,6 @@ import org.jbehave.core.steps.spring.SpringStepsFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
-import java.text.SimpleDateFormat;
-import java.util.List;
-
-//
-//@UsingEmbedder(threads = 4)
-//@RunWith(SpringJUnit4ClassRunner.class)
-//@SpringBootTest(classes = ApplicationToTest.class)
 public class TestRunner extends JUnitStories {
 
   @Autowired
@@ -47,7 +42,6 @@ public class TestRunner extends JUnitStories {
             .useParameterConverters(new ParameterConverters()
                 .addConverters(
                     new ParameterConverters.DateConverter(new SimpleDateFormat("yyyy-MM-dd"))))
-//                .useStoryParser(new GherkinStoryParser())
             .useStepMonitor(new SilentStepMonitor())
     );
   }
