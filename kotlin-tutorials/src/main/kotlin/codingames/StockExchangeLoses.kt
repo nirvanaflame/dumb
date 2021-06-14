@@ -2,11 +2,7 @@ package codingames
 
 import java.util.*
 
-/**
- * Auto-generated code below aims at helping you parse
- * the standard input according to the problem statement.
- **/
-fun main(args: Array<String>) {
+fun main() {
     val input = Scanner(System.`in`)
     val n = input.nextInt()
     var m = 0
@@ -36,7 +32,7 @@ fun getTheWorstCase(stonks: List<Int>): Int? {
     return if (maxLosses.minOrNull()!! > 0) 0 else maxLosses.minOrNull()
 }
 
-fun getTheWorstCase2(stonks: List<Int>): Int? {
+fun getTheWorstCase2(stonks: List<Int>): Int {
     var loss = 0
     var max = 0
 
