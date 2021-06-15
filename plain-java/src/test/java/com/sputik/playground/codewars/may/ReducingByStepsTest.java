@@ -3,6 +3,7 @@ package com.sputik.playground.codewars.may;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.function.IntUnaryOperator;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class ReducingByStepsTest {
@@ -32,6 +33,7 @@ class ReducingByStepsTest {
   }
 
   @Test
+  @Disabled
   void shouldReturn() {
     long[] a = new long[]{18, 69, -90, -78, 65, 40};
 

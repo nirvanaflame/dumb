@@ -1,21 +1,13 @@
 package com.sputik.playground.dao;
 
 import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
 
-@Data
-//@Document(value = "person")
-@Builder
-@AllArgsConstructor
-public class Person {
+public record Person(String id, String firsName, String lastName, Integer age,
+                     List<Skill> skills) {
 
-  //    @Id
-  private String id;
-  private String firstName;
-  private String lastName;
-  private Integer age;
-  private List<Skill> skills;
+}
+
+
+record Skill(String id, String name) {
 
 }

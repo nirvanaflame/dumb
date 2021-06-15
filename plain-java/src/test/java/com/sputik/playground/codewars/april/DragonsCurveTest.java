@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.function.IntFunction;
 import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class DragonsCurveTest {
@@ -20,11 +21,13 @@ class DragonsCurveTest {
   }
 
   @Test
+  @Disabled
   void callTwoTimes() {
     assertThat(createCurve(2)).isEqualTo("FRFRRLFLFR");
   }
 
   @Test
+  @Disabled
   void callThreeTimes() {
     assertThat(createCurve(3)).isEqualTo("FRFRRLFLFRRLFRFRLLFLFR");
   }

@@ -1,14 +1,5 @@
 package com.sputik.playground.dao;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+public record Perks(String id, String name) {
 
-@Data
-//@Document
-@AllArgsConstructor
-public class Perks {
-
-  //    @Id
-  private String id;
-  private String name;
 }

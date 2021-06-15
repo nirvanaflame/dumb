@@ -14,7 +14,7 @@ class DigitalWatchesTest {
 
   @Test
   void testVeryBigHours() {
-    assertThat(time(5313602)).isEqualTo("1:00:02");
+    assertThat(time(5313602)).isEqualTo("12:00:02");
   }
 
   private String time(int n) {
