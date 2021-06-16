@@ -1,0 +1,15 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.1' apply false
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+group = 'org.sputik'
+description = 'Parent gradle project'
+version = '1.0-SNAPSHOT'
+

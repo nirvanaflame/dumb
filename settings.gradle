@@ -1,0 +1,9 @@
+rootProject.name = 'playground-parent'
+
+include 'plain-java'
+include 'reactive-tutorials'
+include 'spring-boot-jbehave'
+include 'camel-tutorials'
+include 'kotlin-tutorials'
+include 'free-code-camp'
+
