@@ -41,8 +41,8 @@ public final class Person {
       return false;
     }
     var that = (Person) obj;
-    return Objects.equals(this.name, that.name) &&
-        Objects.equals(this.age, that.age);
+    return Objects.equals(this.name, that.name)
+           && Objects.equals(this.age, that.age);
   }
 
   @Override
@@ -52,9 +52,9 @@ public final class Person {
 
   @Override
   public String toString() {
-    return "Person[" +
-        "name=" + name + ", " +
-        "age=" + age + ']';
+    return "Person["
+           + "name=" + name + ", "
+           + "age=" + age + ']';
   }
 
 }

@@ -7,7 +7,6 @@ public record Person(String id, String firsName, String lastName, Integer age,
 
 }
 
-
 record Skill(String id, String name) {
 
 }
