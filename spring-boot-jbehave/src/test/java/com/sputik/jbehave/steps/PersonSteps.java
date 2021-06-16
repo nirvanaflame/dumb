@@ -6,7 +6,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import com.sputik.jbehave.api.model.Person;
 import com.sputik.jbehave.api.model.SharedContext;
 import com.sputik.jbehave.client.PersonWebClient;
-import lombok.SneakyThrows;
 import org.jbehave.core.annotations.AfterStory;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Named;
@@ -32,7 +31,6 @@ public class PersonSteps {
         sharedContext.setName(name);
     }
 
-    @SneakyThrows
     @When("call client with name")
     public void callClient() {
         Person response = client.getPersonByName(getSharedContext().getName());

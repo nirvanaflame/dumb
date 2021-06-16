@@ -19,7 +19,8 @@ import org.jbehave.core.steps.spring.SpringStepsFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 
-public class TestRunner extends JUnitStories {
+public class TestRunner
+    extends JUnitStories {
 
   @Autowired
   private ApplicationContext applicationContext;
