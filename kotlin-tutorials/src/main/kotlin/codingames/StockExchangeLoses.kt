@@ -1,9 +1,10 @@
 package codingames
 
+import java.nio.charset.Charset
 import java.util.*
 
 fun main() {
-    val input = Scanner(System.`in`)
+    val input = Scanner(System.`in`, Charset.defaultCharset())
     val n = input.nextInt()
     var m = 0
     var s = 0

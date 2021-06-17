@@ -16,8 +16,8 @@ class SumFirstNTest {
 
   @Test
   void shouldReturnSumOfNthClever() {
-    assertThat(seriesSumClever(5)).isEqualTo("1,57");
-    assertThat(seriesSumClever(9)).isEqualTo("1,77");
+    assertThat(seriesSumClever(5)).isEqualTo("1.57");
+    assertThat(seriesSumClever(9)).isEqualTo("1.77");
   }
 
   private String seriesSum(int n) {
