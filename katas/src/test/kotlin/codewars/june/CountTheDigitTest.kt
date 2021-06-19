@@ -9,7 +9,6 @@ class CountTheDigitTest {
     fun shouldCountDigits() {
         assertEquals(4, nbDig(10, 1))
         assertEquals(1, nbDig(3, 4))
-
     }
 
     @Test
@@ -21,17 +20,20 @@ class CountTheDigitTest {
         var count = 0
         for (i in 0..n) {
             val k = i * i
-            print("$i -> $k -> ")
-            count += k.toString().count { it.digitToInt() == d }
-            println(count)
+            count += k.toString().count { Character.getNumericValue(it) == d }
+            println()
         }
         return count
     }
 
     private fun countDigitFunction(n: Int, d: Int) =
             (0..n).map { it * it }
-                    .map { Int.toString() }
-
+                    .sumOf {
+                        it.toString()
+                                .count { c: Char ->
+                                    Character.getNumericValue(c) == d
+                                }
+                    }
 }
 
 
