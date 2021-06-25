@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "describe": "^1.2.0"
+  }
+}
