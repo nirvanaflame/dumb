@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 class FixStringCaseTest {
 
     @Test
-    fun `should return upper of lowercase`() {
+    fun `should return upper or lowercase`() {
         assertEquals("code", normalize("code"))
         assertEquals("code", normalize("cODe"))
         assertEquals("CODE", normalize("COdE"))
