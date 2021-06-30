@@ -1,12 +1,11 @@
-import java.util.*
 
 fun main() {
-    val scanner = Scanner(System.`in`)
-    val s1 = scanner.nextLine()
-    val n = scanner.nextInt()
-    val s2 = scanner.next()
+    val i = 101
+    val d = 3.1415
+    val s = "32"
 
-    println(s1)
-    println(n)
-    println(s2)
+    println(i.toDouble())
+    println(d.toLong())
+    println(d.toString())
+    println(s.toInt())
 }

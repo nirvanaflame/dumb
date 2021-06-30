@@ -9,7 +9,7 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.apache.commons.io.FilenameUtils;
+import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.Test;
 
 class SumFileWithExtensionTest {
@@ -24,7 +24,7 @@ class SumFileWithExtensionTest {
         .filter(Files::isRegularFile).collect(Collectors.toList());
 
     paths.forEach(p -> {
-      String ext = FilenameUtils.getExtension(p.getFileName().toString());
+      String ext = FileUtils.getExtension(p.getFileName().toString());
       if (map.containsKey(ext)) {
         map.put(ext, map.get(ext) + 1);
       } else {
