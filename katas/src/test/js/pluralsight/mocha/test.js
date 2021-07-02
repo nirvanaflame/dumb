@@ -4,7 +4,23 @@ const should = require("chai").should()
 
 describe("Welcome to Mocha!", () => {
 
-  describe("There three different ways for assertion", () => {
+  before(() => {
+    console.log("################################")
+  })
+
+  beforeEach(() => {
+    console.log("Before each")
+  })
+
+  afterEach(() => {
+    console.log("After each")
+  })
+
+  after(() => {
+    console.log("################################")
+  })
+
+  describe.only("There three different ways for assertion", () => {
 
     it("1) expect syntax", () => {
       expect(1 + 1).to.be.equal(2)
@@ -16,8 +32,12 @@ describe("Welcome to Mocha!", () => {
       result.should.equal(4)
     })
 
-    it("3) assert syntax", () => {
+    it.skip("3) assert syntax", () => {
       assert.equal(2 + 5, 7)
     })
+  })
+
+  it("4) Not gonna be executed because of .only", () => {
+    assert.equal(2 + 5, 7)
   })
 })
