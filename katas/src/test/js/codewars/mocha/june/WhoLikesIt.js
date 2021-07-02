@@ -1,5 +1,5 @@
-const chai = require("chai");
-const assert = chai.assert;
+const { assert } = require("chai")
+
 
 assert.strictEqual(likes([]), 'no one likes this');
 assert.strictEqual(likes(['Peter']), 'Peter likes this');
