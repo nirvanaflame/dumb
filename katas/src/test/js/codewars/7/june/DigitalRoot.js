@@ -1,5 +1,4 @@
-const chai = require("chai");
-const assert = chai.assert;
+const { assert } = require("chai")
 
 
 console.log(assert.strictEqual(digitalRoot(16), 7))
