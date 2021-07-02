@@ -20,7 +20,7 @@ class HighestAndLowestTest {
   }
 
   public String highAndLow(String numbers) {
-    String[] arr = numbers.split("\s");
+    String[] arr = numbers.split("\\s");
 
     IntSummaryStatistics stats = Arrays.stream(arr)
         .map(Integer::valueOf)
@@ -40,7 +40,7 @@ class HighestAndLowestTest {
   }
 
   private String highAndLowAlternative(String s) {
-    String[] arr = s.split("\s");
+    String[] arr = s.split("\\s");
 
     IntSummaryStatistics statistics = Arrays.stream(arr)
         .mapToInt(Integer::parseInt)
