@@ -15,9 +15,6 @@ class ShortestWordLengthTest {
   }
 
   private int shortestWordLength(String s) {
-    return Arrays.stream(s.split("\s"))
-        .mapToInt(String::length)
-        .min()
-        .orElse(0);
+    return Arrays.stream(s.split("\\s")).mapToInt(String::length).min().orElse(0);
   }
 }

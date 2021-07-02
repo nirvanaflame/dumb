@@ -3,10 +3,8 @@ package com.sputik.playground.codewars.may;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.stream.Collectors;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
-@Disabled("Disable auto execution because Jenkins doesn't support Switch expressions")
 class ComplementaryDNATest {
 
   @Test
@@ -20,13 +18,18 @@ class ComplementaryDNATest {
   }
 
   private int complement(int it) {
-    return switch (it) {
-      case 'A' -> 'T';
-      case 'T' -> 'A';
-      case 'G' -> 'C';
-      case 'C' -> 'G';
-      default -> ' ';
-    };
+    switch (it) {
+      case 'A':
+        return 'T';
+      case 'T':
+        return 'A';
+      case 'G':
+        return 'C';
+      case 'C':
+        return 'G';
+      default:
+        return ' ';
+    }
   }
 }
 
