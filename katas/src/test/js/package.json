@@ -2,7 +2,7 @@
   "name": "js-katas",
   "version": "1.0.0",
   "scripts": {
-    "test": "mocha './**/mocha/test.js' --watch"
+    "test": "mocha 'codewars/**/*.js' --watch"
   },
   "author": "nf",
   "devDependencies": {
