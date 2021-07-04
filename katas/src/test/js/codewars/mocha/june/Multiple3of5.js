@@ -1,4 +1,4 @@
-const { assert } = require("chai")
+const { assert } = require("chai");
 const range = (start, stop, step) => Array.from({ length: (stop - 1 - start) / step + 1 }, (_, i) => start + (i * step))
 
 

@@ -1,4 +1,4 @@
-const { expect } = require("chai")
+const { expect } = require("chai");
 
 describe("Find the number which appears odd times in array", () => {
 

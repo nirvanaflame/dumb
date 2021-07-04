@@ -1,4 +1,4 @@
-const { expect } = require("chai")
+const { expect } = require("chai");
 
 describe("Sum digits while number is not simple", () => {
 
