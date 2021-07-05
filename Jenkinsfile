@@ -15,7 +15,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'gradlew build'
+                sh './gradlew build'
                 script {
                     def testResults = findFiles(glob: '**/TEST-*.xml')
                     for (xml in testResults) {
