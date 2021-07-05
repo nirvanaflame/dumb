@@ -10,27 +10,43 @@ pipeline {
             }
         }
 
-        stage('Build') {
+        stage('package') {
             steps {
                 if (isUnix()) {
                     echo 'linux'
                     sh 'll'
-                    sh 'gradlew build'
+                    sh 'gradlew assemble'
                 } else {
                     echo 'windows'
                     bat 'dir'
-                    bat(/"gradlew.bat" build/)
+                    bat(/"gradlew.bat" assemble/)
                 }
             }
         }
 
-        stage('Results') a {
+        stage('Test') {
             steps {
                 step {
-                    junit allowEmptyResults: true, healthScaleFactor: 20.0, testResults: '**/TEST-*.xml'
+                    sh 'gradlew test'
                 }
                 step {
-                    archiveArtifacts 'target/*.jar'
+                    script {
+                        def testResults = findFiles(glob: '**/TEST-*.xml')
+                        for (xml in testResults) {
+                            touch xml.getPath()
+                        }
+                    }
+                }
+            }
+        }
+
+        stage('Results') {
+            steps {
+                step {
+                    archiveArtifacts 'build/*.jar'
+                }
+                step {
+                    junit allowEmptyResults: true, healthScaleFactor: 20.0, testResults: '**/TEST-*.xml'
                 }
             }
         }
