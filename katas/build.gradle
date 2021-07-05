@@ -19,8 +19,9 @@ application {
     getMainClass().set('com.sputik.playground.PlaygroundApplication')
 }
 
-tasks.named('test') {
+test {
     useJUnitPlatform()
+    ignoreFailures   = true
     reports {
         junitXml.enabled = true
     }
