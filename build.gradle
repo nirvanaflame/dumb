@@ -1,5 +1,6 @@
 plugins {
     id 'org.springframework.boot' version '2.5.1' apply false
+    id 'groovy'
 }
 
 allprojects {
