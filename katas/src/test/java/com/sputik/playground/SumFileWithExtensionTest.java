@@ -10,11 +10,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.apache.commons.io.FileUtils;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 class SumFileWithExtensionTest {
 
   @Test
+  @Disabled("Can not be run by Jenkins")
   void test() throws IOException {
     String path = "C:\\Program Files\\EPAM";
     HashMap<String, Integer> map = new HashMap<>();
