@@ -19,17 +19,11 @@ pipeline {
             }
         }
 
-        stage('package') {
+        stage('Build') {
             steps {
-                if (isUnix()) {
-                    echo 'linux'
-                    sh 'll'
-                    sh 'gradlew assemble'
-                } else {
-                    echo 'windows'
-                    bat 'dir'
-                    bat(/"gradlew.bat" assemble/)
-                }
+                echo 'linux'
+                sh 'll'
+                sh 'gradlew assemble'
             }
         }
 
