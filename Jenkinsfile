@@ -15,7 +15,7 @@ pipeline {
                 if (isUnix()) {
                     echo 'linux'
                     sh 'll'
-                    sh '".\\gradlew" build'
+                    sh 'gradlew build'
                 } else {
                     echo 'windows'
                     bat 'dir'
