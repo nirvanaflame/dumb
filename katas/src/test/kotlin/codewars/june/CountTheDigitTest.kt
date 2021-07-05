@@ -28,12 +28,12 @@ class CountTheDigitTest {
 
     private fun countDigitFunction(n: Int, d: Int) =
             (0..n).map { it * it }
-                    .sumOf {
-                        it.toString()
-                                .count { c: Char ->
-                                    Character.getNumericValue(c) == d
-                                }
-                    }
+                .sumOf {
+                    it.toString()
+                        .count { c: Char ->
+                            Character.getNumericValue(c) == d
+                        }
+                }
 }
 
 
