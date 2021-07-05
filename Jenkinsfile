@@ -2,11 +2,20 @@ pipeline {
     agent any
 
     stages {
-        stage('Preparation') { // for display purposes
-            // Get some code from a GitHub repository
-            git 'https://github.com/nirvanaflame/dumb.git'
-            parameters {
-                file description: 'Upload e2e.xlsx', name: 'katas/src/main/resources/data/e2e.txt'
+        stage('Preparation') {
+
+            step('Copy file parameter') {
+                parameters {
+                    file description: 'Upload e2e.xlsx', name: 'katas/src/main/resources/data/e2e.txt'
+                }
+            }
+
+            step('Clean project // make it optional') {
+                sh 'gradlew clean'
+            }
+
+            step('Download changes git changes') {
+                git 'https://github.com/nirvanaflame/dumb.git'
             }
         }
 
