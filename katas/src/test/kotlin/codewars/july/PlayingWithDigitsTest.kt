@@ -45,11 +45,11 @@ class PlayingWithDigitsTest {
         assertEquals(51, digitPow(46288, 3))
     }
 
-    private fun callPowerInfix(): Int {
-        return 2 `^` 2
+    fun callPowerInfix(): Int {
+        return 2 `**` 2
     }
 
-    private fun digPow(denominator: Int, initialPower: Int): Int {
+    fun digPow(denominator: Int, initialPower: Int): Int {
         var power = initialPower
 
         val numberWithPoweredDigits: Int = denominator.toString()
@@ -59,13 +59,13 @@ class PlayingWithDigitsTest {
         return if (numberWithPoweredDigits % denominator == 0) numberWithPoweredDigits / denominator else -1
     }
 
-    private fun Int.pow(p: Int) = this.toDouble().pow(p.toDouble()).toInt()
-    infix fun Int.`^`(p: Int) = this.toDouble().pow(p).toInt()
+    fun Int.pow(p: Int) = this.toDouble().pow(p.toDouble()).toInt()
+    infix fun Int.`**`(p: Int) = this.toDouble().pow(p).toInt()
 
-    private fun digitPow(n: Int, p: Int) =
+    fun digitPow(n: Int, p: Int) =
             n.toString()
                 .map(Character::getNumericValue)
-                .foldIndexed(0) { index: Int, acc: Int, each: Int -> acc + (each `^` (p + index)) }
+                .foldIndexed(0) { index: Int, acc: Int, each: Int -> acc + (each `**` (p + index)) }
                 .let { if (it % n == 0) it / n else -1 }
 }
 

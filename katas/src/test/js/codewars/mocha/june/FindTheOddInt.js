@@ -50,9 +50,9 @@ describe("Find the number which appears odd times in array", () => {
 /**
  * Given an array of integers, find the one that appears an odd number of times.
  * There will always be only one integer that appears an odd number of times.
- * 
- * @param {*} arr 
- * @returns number which appers odd time in array
+ *
+ * @param {*} arr
+ * @returns number which appears odd time in array
  */
 function findOdd(arr) {
   const groupByNumber = arr.reverse().reduce((map, it) => map.set(it, (map.get(it) || 0) + 1), new Map())
@@ -70,10 +70,10 @@ function findOdd(arr) {
 }
 
 /**
- * Function takes first value from array 
+ * Function takes first value from array
  * and use XOR operator to compare with the rest
- * 
- * @param {arry} xs 
- * @returns number which appers odd times 
+ *
+ * @param {Array} xs
+ * @returns number which appears odd times
  */
 const findOddBestKataSolution = (xs) => xs.reduce((a, b) => a ^ b);
