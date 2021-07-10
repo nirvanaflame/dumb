@@ -1,6 +1,5 @@
 rootProject.name = 'playground-parent'
 
-include 'katas'
 include 'reactive-tutorials'
 include 'spring-boot-jbehave'
 include 'camel-tutorials'
