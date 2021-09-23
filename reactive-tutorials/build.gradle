@@ -1,6 +1,5 @@
 plugins {
 	id 'java'
-	id 'idea'
 	id 'org.springframework.boot'
 	id 'io.spring.dependency-management'
 }
@@ -14,8 +13,8 @@ dependencies {
 
 	testImplementation 'io.projectreactor:reactor-test'
 	testImplementation 'org.assertj:assertj-core:3.20.2'
-	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0-M1'
-	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.0-M1'
+	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.0'
+	testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.0'
 
 
 	implementation 'org.apache.commons:commons-lang3:3.12.0'

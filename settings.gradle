@@ -4,5 +4,4 @@ include 'reactive-tutorials'
 include 'spring-boot-jbehave'
 include 'camel-tutorials'
 include 'kotlin-tutorials'
-include 'free-code-camp'
-
+include 'aws-tutorials'

@@ -1,6 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '2.5.1' apply false
-    id 'groovy'
+    id 'idea'
+    // The apply statement with a boolean can be used to disable the default behavior of applying the plugin immediately (e.g. you want to apply it only in subprojects)
+    id 'org.springframework.boot' version '2.5.5' apply false
 }
 
 allprojects {
@@ -13,4 +14,3 @@ allprojects {
 group = 'org.sputik'
 description = 'Parent gradle project'
 version = '1.0-SNAPSHOT'
-
